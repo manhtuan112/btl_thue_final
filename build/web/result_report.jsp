@@ -14,6 +14,15 @@
                 max-width:600px;
                 margin: auto;
             }
+
+            .txt-end{
+                text-align: end;
+            }
+            
+            .txt-center{
+                text-align: center;
+            }
+
         </style>
         <link rel="stylesheet" href="css/report.css" >
         <title>Chi Tiết Báo Cáo</title>
@@ -30,14 +39,14 @@
             <table class="table table-bordered table-hover" border="1" cellpadding="5" style="width: 100%;">
                 <thead>
                     <tr>
-                        <th>Đối tượng</th>
-                        <th>Số liệu</th>
+                        <th class="txt-center">Đối tượng</th>
+                        <th class="txt-center">Số liệu</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <td>Người tham gia đóng thuế </td>
-                        <td>${requestScope.SoNguoiDongThue}</td>
+                        <td class="txt-end">${requestScope.SoNguoiDongThue}</td>
                     </tr>
                 </tbody>
             </table>
@@ -47,22 +56,22 @@
                 
                 <thead>
                     <tr>
-                        <th>Khoản tiền</th>
-                        <th>Số liệu</th>
+                        <th class="txt-center">Khoản tiền</th>
+                        <th class="txt-center">Số liệu</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td>Tổng thu trong tháng </td>
-                        <td>${requestScope.TongThueThuDuoc}</td>
+                        <td >Tổng thu trong tháng </td>
+                        <td class="txt-end">${requestScope.TongThueThuDuoc}</td>
                     </tr>
                     <tr>
                         <td>Chưa thu được trong tháng</td>
-                        <td>${requestScope.TongThueNo}</td>
+                        <td class="txt-end">${requestScope.TongThueNo}</td>
                     </tr>
                     <tr>
                         <td>Trung Bình Thuế </td>
-                        <td>${requestScope.TrungBinhThue}</td>
+                        <td class="txt-end">${requestScope.TrungBinhThue}</td>
                     </tr>
                 </tbody>
             </table>
@@ -71,26 +80,26 @@
             <table class="table table-bordered table-hover" border="1" cellpadding="5" style="width: 100%;">
                 <thead>
                     <tr>
-                        <th>Mô tả</th>
-                        <th>Tên</th>
-                        <th>Số Tiền</th>
+                        <th class="txt-center">Mô tả</th>
+                        <th class="txt-center">Tên</th>
+                        <th class="txt-center">Số Tiền</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <td>Cá Nhân đóng Thuế nhiều nhất </td>
                         <td>${requestScope.nameDTNN}</td>
-                        <td>${requestScope.DongThueNhieuNhat}</td>
+                        <td class="txt-end">${requestScope.DongThueNhieuNhat}</td>
                     </tr>
                     <tr>
                         <td>Cá Nhân đóng Thuế ít nhất</td>
                         <td>${requestScope.nameDTIN}</td>
-                        <td>${requestScope.DongThueItNhat}</td>
+                        <td class="txt-end">${requestScope.DongThueItNhat}</td>
                     </tr>
                     <tr>
                         <td>Cá nhân nợ nhiều Thuế nhất</td>
                         <td>${requestScope.nameNTNN}</td>
-                        <td>${requestScope.NoThueNhieuNhat}</td>
+                        <td class="txt-end">${requestScope.NoThueNhieuNhat}</td>
                     </tr>
                 </tbody>
             </table>

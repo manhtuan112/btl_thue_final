@@ -18,6 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 import model.History;
 import model.User;
+import utilities.Utilities;
 
 /**
  *
@@ -124,6 +125,12 @@ public class ReportController extends HttpServlet {
                     System.out.println("Khong có ai đóng thuế cả");
                 }
             
+                String tbt=Utilities.convertMoneyFormat(TrungBinhThue);
+                String tttd=Utilities.convertMoneyFormat(TongThueThuDuoc);
+                String ttn=Utilities.convertMoneyFormat(TongThueNo);
+                String dongthuenn=Utilities.convertMoneyFormat(DongThueNhieuNhat);
+                String dongthuein=Utilities.convertMoneyFormat(DongThueItNhat);
+                String nothuenn=Utilities.convertMoneyFormat(NoThueNhieuNhat);
             
             
             //tim nguoi dung theo idthue
@@ -137,15 +144,15 @@ public class ReportController extends HttpServlet {
                 String nameDTIN=dtin.getHoten();
            
            
-                request.setAttribute("DongThueNhieuNhat", DongThueNhieuNhat);
+                request.setAttribute("DongThueNhieuNhat", dongthuenn);
                 request.setAttribute("nameDTNN", nameDTNN);
-                request.setAttribute("DongThueItNhat", DongThueItNhat);
+                request.setAttribute("DongThueItNhat", dongthuein);
                 request.setAttribute("nameDTIN", nameDTIN);
-                request.setAttribute("NoThueNhieuNhat", NoThueNhieuNhat);
+                request.setAttribute("NoThueNhieuNhat", nothuenn);
                 request.setAttribute("nameNTNN", nameNTNN);
-                request.setAttribute("TrungBinhThue", TrungBinhThue);
-                request.setAttribute("TongThueThuDuoc", TongThueThuDuoc);
-                request.setAttribute("TongThueNo", TongThueNo);
+                request.setAttribute("TrungBinhThue", tbt);
+                request.setAttribute("TongThueThuDuoc", tttd);
+                request.setAttribute("TongThueNo", ttn);
                 request.setAttribute("SoNguoiDongThue", SoNguoiDongThue);
                 request.setAttribute("tinh", tinh);
                 request.setAttribute("thang", thang);
@@ -155,81 +162,7 @@ public class ReportController extends HttpServlet {
                 url="/result_report.jsp";
             }
             
-//            List <History> list= dao.getHistorybyAddressDate(tinh, thang, nam);
 //            
-//            String thue=list.get(0).getSotiendadong();
-//            long DongThueNhieuNhat=0;
-//            long DongThueItNhat=xuly(thue);
-//            long NoThueNhieuNhat=0;
-//            String IDDTNN="";
-//            String IDDTIN="";
-//            String IDNTNN="";
-//            int SoNguoiDongThue=0;
-//            long TongThueThuDuoc=0;
-//            long TongThueNo=0;
-//            long TrungBinhThue=0;
-//            
-//           
-//            List <String> uniqueH=new ArrayList<>();
-//            for(History i:list){
-//                long Dong=xuly(i.getSotiendadong());
-//                long No=xuly(i.getSotienconno());
-//                
-//                if(Dong>DongThueNhieuNhat) {
-//                    DongThueNhieuNhat=Dong;
-//                    IDDTNN=i.getIdthue();
-//                }
-//                if(Dong<=DongThueItNhat) {
-//                    DongThueItNhat=Dong;
-//                    IDDTIN=i.getIdthue();
-//                }
-//                if(No>NoThueNhieuNhat){
-//                    NoThueNhieuNhat=No;
-//                    IDNTNN=i.getIdthue();
-//                }
-//                if(!uniqueH.contains(i.getIdthue())){
-//                    uniqueH.add(i.getIdthue());
-//                    SoNguoiDongThue+=1;
-//                }
-//                
-//                TongThueThuDuoc+=Dong;
-//                TongThueNo+=No;
-//            }
-//            try{
-//                TrungBinhThue=TongThueThuDuoc/SoNguoiDongThue;
-//            }catch(ArithmeticException e){
-//                System.out.println("Khong có ai đóng thuế cả");
-//            }
-//            
-//            
-//            
-//            //tim nguoi dung theo idthue
-//           User ntnn=dao.getUserByIdThue(IDNTNN);
-//           String nameNTNN=ntnn.getHoten();
-//           
-//           User dtnn=dao.getUserByIdThue(IDDTNN );
-//           String nameDTNN=dtnn.getHoten();
-//       
-//           User dtin=dao.getUserByIdThue(IDDTIN);
-//           String nameDTIN=dtin.getHoten();
-//           
-//           
-//           request.setAttribute("DongThueNhieuNhat", DongThueNhieuNhat);
-//           request.setAttribute("nameDTNN", nameDTNN);
-//           request.setAttribute("DongThueItNhat", DongThueItNhat);
-//           request.setAttribute("nameDTIN", nameDTIN);
-//           request.setAttribute("NoThueNhieuNhat", NoThueNhieuNhat);
-//           request.setAttribute("nameNTNN", nameNTNN);
-//           request.setAttribute("TrungBinhThue", TrungBinhThue);
-//           request.setAttribute("TongThueThuDuoc", TongThueThuDuoc);
-//           request.setAttribute("TongThueNo", TongThueNo);
-//           request.setAttribute("SoNguoiDongThue", SoNguoiDongThue);
-//           request.setAttribute("tinh", tinh);
-//           request.setAttribute("thang", thang);
-//           request.setAttribute("nam", nam);
-//           
-//           
-//            String url="/result_report.jsp";
             getServletContext().getRequestDispatcher(url).forward(request, response);
     } 
 

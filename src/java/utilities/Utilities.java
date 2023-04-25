@@ -10,12 +10,17 @@ import java.util.Date;
  *
  * @author ADMIN
  */
+
 public class Utilities {
+    
+    // chuyển số dạng YYYY-mm-dd thành dd/mm/YYYY
     public static String convertDate(String date) {
         String[] dates = date.split("-");
         return dates[2]+"/"+dates[1]+"/"+dates[0];
         
     }
+    
+    // chuyển tiền thành dạng 100.000.000
     public static String convertMoneyFormat(long money) {
         String atmp=String.valueOf(money);
         String res = "";

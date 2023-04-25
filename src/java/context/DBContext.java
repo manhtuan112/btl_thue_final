@@ -14,6 +14,8 @@ import java.util.logging.Logger;
  *
  * @author ADMIN
  */
+
+// Kết nối với csdl
 public class DBContext {
     public static Connection getConnection(){
         String url = "jdbc:mysql://localhost:3306/thuedb";

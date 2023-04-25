@@ -51,7 +51,7 @@
                                         <td>${x.thueSuat}</td>
                                         <td>${x.ngaySuaDoi}</td>
                                         <td>
-                                            <a href="update?sid=${x.id}">update</a>
+                                            <a href="update?sid=${x.id}">Cập nhật</a>
                                         </td>
                                     </tr>
                                 </c:forEach>

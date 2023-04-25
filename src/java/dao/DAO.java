@@ -28,7 +28,7 @@ import utilities.Utilities;
 public class DAO {
     
     
-    
+    //thực hiện chức năng login
     
     public Account login(String user, String pass, Connection conn){
         
@@ -52,6 +52,7 @@ public class DAO {
         return null;
     }
     
+    // thực hiện chức năng kiểm tra tài khoản   
     public Account checkAccountExist(String user){
 
         String query = "select * from accountadmin where username = ?";
@@ -73,6 +74,8 @@ public class DAO {
         return null;
     }
     
+    
+    // thực hiện chức năng đăng kí
     public boolean signup(String user, String pass, Connection conn){
         Calendar d = Calendar.getInstance();
         String idUser = "ACC_"+user.toLowerCase()+"_"+d.get(Calendar.YEAR);
@@ -92,7 +95,7 @@ public class DAO {
     }
     
     
-    
+    // lấy người dùng theoid địa chỉ
     public List<User> getUserByAddress(String tinh, String huyen, String xa, String status){
         List<User> list = new ArrayList<>();
         List<String> value = new ArrayList<>();
@@ -154,6 +157,8 @@ public class DAO {
         return list;
     }
     
+    // lấy người dùng theo idThue và tên
+    
     public List<User> getUserByNameorIdThue(String filter_roll, String value, String status){
         List<User> list = new ArrayList<>();
         String query="";
@@ -202,6 +207,8 @@ public class DAO {
         return list;
     }
     
+    
+    // lấy người dùng theo id thuế
     
     public User getUserByIdThue(String idThue){
         String query = "select * from users where idthue = ?";

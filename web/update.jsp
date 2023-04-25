@@ -52,7 +52,7 @@
             <table class="btn-group" role="group" aria-label="Basic example">
                 <td></td>
                 <td>
-                    <button type="submit" class="btn btn-primary">Update</button>
+                    <button type="submit" class="btn btn-primary">Cập nhật</button>
                 </td>
             </table>
 

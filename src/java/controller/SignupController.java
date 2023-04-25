@@ -39,7 +39,7 @@ public class SignupController extends HttpServlet {
         String rePass = request.getParameter("repass");
         
         if(!pass.equals(rePass)){
-            request.setAttribute("mess", "Password and Re-Password must be same!");
+            request.setAttribute("mess", "Mật khẩu và Nhập lại mật khẩu phải giống nhau!");
             request.setAttribute("toggle", "signup-form");
             request.getRequestDispatcher("/index.jsp").forward(request, response);
             
